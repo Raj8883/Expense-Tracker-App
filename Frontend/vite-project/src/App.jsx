@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { cloneElement } from 'react'
 import {
   BrowserRouter as Router,
   Routes,
@@ -10,7 +10,8 @@ import SignUp from './components/SignUp'
 import Home from './components/Home'
 import Income from './components/Income'
 import Expense from './components/Expense'
-import UserProvider from './context/userContext'
+import UserProvider from './context/UserContext'
+import { Toaster } from 'react-hot-toast';
 
 const App = () => {
   return (
@@ -27,6 +28,15 @@ const App = () => {
           </Routes>
         </Router>
       </div>
+
+      <Toaster
+        toastOptions={{
+          className: "",
+          style: {
+            fontSize: '13px'
+          },
+        }}
+      />
     </UserProvider>
   );
 };
